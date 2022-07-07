@@ -14,9 +14,24 @@ public class ResourceGenerator : MonoBehaviour
         timerMax = resourceGeneratorData.timerMax;
     }
 
-    private void Start()
+    public ResourceGeneratorData GetResourceGeneratorData()
     {
-        Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(transform.position, resourceGeneratorData.resourceDetectionRadius);
+        return resourceGeneratorData;
+    }
+
+    public float GetTimerNormalized()
+    {
+        return timer / timerMax;
+    }
+
+    public float GetAmountGeneratedPerSecond()
+    {
+        return 1 / timerMax;
+    }
+
+    public static int GetNearbyResourceAmount(ResourceGeneratorData resourceGeneratorData, Vector3 position)
+    {
+        Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(position, resourceGeneratorData.resourceDetectionRadius);
 
         int nearByResourceAmount = 0;
         foreach (Collider2D collider2D in collider2DArray)
@@ -30,12 +45,18 @@ public class ResourceGenerator : MonoBehaviour
                     //Same type
                     nearByResourceAmount++;
                 }
-                
+
             }
         }
 
         nearByResourceAmount = Mathf.Clamp(nearByResourceAmount, 0, resourceGeneratorData.maxResourceAmount);
+        return nearByResourceAmount;
+    }
 
+    private void Start()
+    {
+
+        int nearByResourceAmount = GetNearbyResourceAmount(resourceGeneratorData, transform.position);
 
         if (nearByResourceAmount == 0)
         {
