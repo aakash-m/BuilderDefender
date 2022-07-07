@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpritePositionSortingOrder : MonoBehaviour
 {
-    [SerializeField] private bool runOnce;
-    [SerializeField] private float positionOffsetY;
+    [SerializeField] bool runOnce;
+    [SerializeField] float positionOffsetY;
 
     private SpriteRenderer spriteRenderer;
 
