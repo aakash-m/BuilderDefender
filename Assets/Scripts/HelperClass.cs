@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class UtilsClass
+public static class HelperClass
 {
     private static Camera mainCamera;
 
