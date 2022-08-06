@@ -26,15 +26,6 @@ public class ResourceManager : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            ResourceTypeListScriptableObject resourceTypeList = Resources.Load<ResourceTypeListScriptableObject>(typeof(ResourceTypeListScriptableObject).Name);
-            AddResource(resourceTypeList.list[2], 2);
-        }
-    }
-
     private void Test()
     {
         foreach(ResourceTypeScriptableObject resourceType in resourceAmountDictionary.Keys)
