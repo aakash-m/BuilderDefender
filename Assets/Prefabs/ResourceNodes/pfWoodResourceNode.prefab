@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6899198486658349360}
-  - component: {fileID: 6470968080794450281}
   - component: {fileID: 1736060951788095019}
+  - component: {fileID: 6470968080794450281}
   m_Layer: 0
   m_Name: pfWoodResourceNode
   m_TagString: Untagged
@@ -33,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736060951788095019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6899198486658349363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ecb389f4532254c944a7471809f164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceType: {fileID: 11400000, guid: 1b0b5599ed60db2478ce85db54b1652b, type: 2}
 --- !u!58 &6470968080794450281
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -49,19 +62,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.16}
   serializedVersion: 2
   m_Radius: 0.41
---- !u!114 &1736060951788095019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6899198486658349363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ecb389f4532254c944a7471809f164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resourceType: {fileID: 11400000, guid: 1b0b5599ed60db2478ce85db54b1652b, type: 2}
 --- !u!1001 &1478273441442167683
 PrefabInstance:
   m_ObjectHideFlags: 0

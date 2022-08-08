@@ -14,6 +14,9 @@ public class BuildingManager : MonoBehaviour
         public BuildingTypeScriptableObject activeBuildingType;
     }
 
+    [SerializeField] private Building hqBuilding;
+
+
     BuildingTypeScriptableObject activeBuildingType;
     BuildingTypeListScriptableObject buildingTypeList;
     private Camera mainCamera;
@@ -54,7 +57,12 @@ public class BuildingManager : MonoBehaviour
                     TooltipUI.Instance.Show(errorMessage, new TooltipUI.TooltipTimer { timer = 2f });
                 }
             }
-           // Debug.Log("CanSpawnBuilding: " + CanSpawnBuilding(buildingTypeList.list[0], UtilsClass.GetMouseWorldPosition()));
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Vector3 enemyPosition = HelperClass.GetMouseWorldPosition() + HelperClass.GetRandomDir() * 5f;
+            Enemy.Create(enemyPosition);
         }
 
     }
@@ -121,6 +129,11 @@ public class BuildingManager : MonoBehaviour
 
         errorMessage = "Too far from any other building";
         return false;
+    }
+
+    public Building GetHQBuilding()
+    {
+        return hqBuilding;
     }
 
 }

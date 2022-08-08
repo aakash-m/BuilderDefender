@@ -26,14 +26,6 @@ public class ResourceManager : MonoBehaviour
 
     }
 
-    private void Test()
-    {
-        foreach(ResourceTypeScriptableObject resourceType in resourceAmountDictionary.Keys)
-        {
-            Debug.Log(resourceType.name + ": " + resourceAmountDictionary[resourceType]);
-        }
-    }
-
     public void AddResource(ResourceTypeScriptableObject resourceType, int amount)
     {
         resourceAmountDictionary[resourceType] += amount;
