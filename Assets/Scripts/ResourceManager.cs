@@ -6,11 +6,14 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    public static ResourceManager Instance { get; private set; }
-    private Dictionary<ResourceTypeScriptableObject, int> resourceAmountDictionary;
 
     public event EventHandler OnResourceAmountChanged;
 
+    public static ResourceManager Instance { get; private set; }
+    
+    private Dictionary<ResourceTypeScriptableObject, int> resourceAmountDictionary;
+
+    [SerializeField] List<ResourceAmount> startingResourceAmountList;
 
     private void Awake()
     {
@@ -23,6 +26,12 @@ public class ResourceManager : MonoBehaviour
         {
             resourceAmountDictionary[resourceType] = 0;
         }
+
+        foreach (ResourceAmount resourceAmount in startingResourceAmountList)
+        {
+            AddResource(resourceAmount.resourceType, resourceAmount.amount);
+        }
+
 
     }
 
